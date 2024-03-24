@@ -12,7 +12,6 @@
 //   alert("Не знаєте? ECMAScript!");
 // }
 
-
 //Напишіть программу, яка отримує від користувача
 //число (кількість хвилин) и виводить у консоль
 //рядок у форматі годин та хвилин
@@ -23,8 +22,8 @@
 // let hours = Math.floor(answer / 60);
 // let minutes = answer % 60;
 
-// hours = String(hours).padStart(2, "0");  
-// minutes = String(minutes).padStart(2, "0"); 
+// hours = String(hours).padStart(2, "0");
+// minutes = String(minutes).padStart(2, "0");
 
 // console.log(`${hours}:${minutes}`);
 
@@ -45,16 +44,45 @@
 
 // console.log(counter (10, 1));
 
-const max = 10;
-const min = 1;
-let counter = max;
-let sum = 0;
-while (counter >= min) {
-    console.log(counter);
-    if (counter % 2 === 0) {
-        sum += counter;
-    }
-    counter -= 1;
+// const max = 10;
+// const min = 1;
+// let counter = max;
+// let sum = 0;
+// while (counter >= min) {
+//     console.log(counter);
+//     if (counter % 2 === 0) {
+//         sum += counter;
+//     }
+//     counter -= 1;
+// }
+
+// console.log(sum);
+
+// Змінна num може набувати 4 значення: 1, 2, 3 або 4. Якщо вона має
+// значення '1', то у змінну result запишемо 'зима', якщо має значення
+// '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+
+const num = prompt("Enter number from 1 to 4");
+function whichSeason(num) {
+  let result = "";
+  const numNumber = Number(num);
+  switch (numNumber) {
+    case 1:
+      result = "winter";
+      break;
+    case 2:
+      result = "spring";
+      break;
+    case 3:
+      result = "summer";
+      break;
+    case 4:
+      result = "autumn";
+      break;
+    default:
+      result = "Enter number from 1 to 4";
+  }
+  return result;
 }
 
-console.log(sum);
+console.log(whichSeason(num));
