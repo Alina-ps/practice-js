@@ -106,7 +106,7 @@
 // if (login === "Адмін") {
 //   const password = prompt("Enter your password");
 //   // if (password === "Я головний") {
-//   //   alert("Вітаю!"); 
+//   //   alert("Вітаю!");
 //   // }
 //   // else {
 //   //   alert("Невірний пароль!");
@@ -140,20 +140,43 @@
 // } else  {
 //   console.log(`${minuteValue} входить в четверту чверть`);
 
-// } 
+// }
 
 
-const minuteValue = Math.floor(Math.random() * (59 - 0) + 0);
-if(minuteValue <= 15) {
-  console.log(`${minuteValue} входить в першу чверть`);
+// const minuteValue = Math.floor(Math.random() * (59 - 0) + 0);
+// if(minuteValue <= 15) {
+//   console.log(`${minuteValue} входить в першу чверть`);
 
-} else if(minuteValue <= 30) {
-  console.log(`${minuteValue} входить в другу чверть`);
+// } else if(minuteValue <= 30) {
+//   console.log(`${minuteValue} входить в другу чверть`);
 
-} else if(minuteValue <= 45) {
-  console.log(`${minuteValue} входить в третю чверть`);
+// } else if(minuteValue <= 45) {
+//   console.log(`${minuteValue} входить в третю чверть`);
 
-} else  {
-  console.log(`${minuteValue} входить в четверту чверть`);
+// } else  {
+//   console.log(`${minuteValue} входить в четверту чверть`);
 
-} 
+// }
+
+
+//Якщо число ділитися на 3 повертати
+//fizz якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function check(number) {
+  if (typeof number !== "number") {
+  return "NaN"
+}
+  if (number % 3 === 0 && number % 5 === 0) {
+    return "fizzbuzz";
+  }
+  if (number % 3 === 0) {
+    return "fizz";
+  }
+  if (number % 5 === 0) {
+    return "buzz";
+  }
+  return "false";
+}
+
+console.log(check(15));
