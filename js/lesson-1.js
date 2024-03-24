@@ -163,20 +163,34 @@
 //fizz якщо ділитися на 5 повертати buzz
 //Якщо ділитися на 3 і на 5 повернути fizzbuzz
 
-function check(number) {
-  if (typeof number !== "number") {
-  return "NaN"
-}
-  if (number % 3 === 0 && number % 5 === 0) {
-    return "fizzbuzz";
-  }
-  if (number % 3 === 0) {
-    return "fizz";
-  }
-  if (number % 5 === 0) {
-    return "buzz";
-  }
-  return "false";
-}
+// function check(number) {
+//   if (typeof number !== "number") {
+//   return "NaN"
+// }
+//   if (number % 3 === 0 && number % 5 === 0) {
+//     return "fizzbuzz";
+//   }
+//   if (number % 3 === 0) {
+//     return "fizz";
+//   }
+//   if (number % 5 === 0) {
+//     return "buzz";
+//   }
+//   return "false";
+// }
 
-console.log(check(15));
+// console.log(check(15));
+
+
+
+// Є рядок, який складається із символів, наприклад, 'abcde'.
+// Перевірте, що першим символом цього рядка є літера 'a'.
+// Якщо це так - виведіть 'Так', в іншому випадку - 'Ні'.
+
+
+const message = "bcde";
+if (message.startsWith("a")) {
+  alert("Так");
+} else {
+  alert("No");
+}
