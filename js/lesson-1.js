@@ -101,24 +101,59 @@
 //то вивести рядок "Вітаю!"
 //в іншому випадку виводити рядок "Невірний пароль!"
 
-const login = prompt("Enter your login");
-console.log(login);
-if (login === "Адмін") {
-  const password = prompt("Enter your password");
-  // if (password === "Я головний") {
-  //   alert("Вітаю!"); 
-  // }
-  // else {
-  //   alert("Невірний пароль!");
-  // }
+// const login = prompt("Enter your login");
+// console.log(login);
+// if (login === "Адмін") {
+//   const password = prompt("Enter your password");
+//   // if (password === "Я головний") {
+//   //   alert("Вітаю!"); 
+//   // }
+//   // else {
+//   //   alert("Невірний пароль!");
+//   // }
 
-  alert(password === "Я головний" ? "Вітаю!" : "Невірний пароль!");
+//   alert(password === "Я головний" ? "Вітаю!" : "Невірний пароль!");
 
-} else if (login === "" || login === null) {
-  alert("Скасовано");
+// } else if (login === "" || login === null) {
+//   alert("Скасовано");
    
-}
-else {
-  alert("Я вас не знаю");
+// }
+// else {
+//   alert("Я вас не знаю");
 
-}
+// }
+
+// В змінній minuteValue є число від 0 до 59.
+// Визначте до якої чверті години входить
+// це число(в першу, другу, треттю чи четверту).
+
+// const minuteValue = Math.floor(Math.random() * (59 - 0) + 0);
+// if(minuteValue <= 15) {
+//   console.log(`${minuteValue} входить в першу чверть`);
+
+// } else if(minuteValue > 15 && minuteValue <= 30) {
+//   console.log(`${minuteValue} входить в другу чверть`);
+
+// } else if(minuteValue > 30 && minuteValue <= 45) {
+//   console.log(`${minuteValue} входить в третю чверть`);
+
+// } else  {
+//   console.log(`${minuteValue} входить в четверту чверть`);
+
+// } 
+
+
+const minuteValue = Math.floor(Math.random() * (59 - 0) + 0);
+if(minuteValue <= 15) {
+  console.log(`${minuteValue} входить в першу чверть`);
+
+} else if(minuteValue <= 30) {
+  console.log(`${minuteValue} входить в другу чверть`);
+
+} else if(minuteValue <= 45) {
+  console.log(`${minuteValue} входить в третю чверть`);
+
+} else  {
+  console.log(`${minuteValue} входить в четверту чверть`);
+
+} 
