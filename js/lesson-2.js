@@ -138,7 +138,15 @@ const account = {
   //після чого додає його в історю транзакцій
   //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
   //що недостатньо коштів на рахунку
-  withdraw(amount) {},
+  withdraw(amount) {
+    if (amount > this.balance) {
+      console.log("недостатньо коштів на рахунку");
+      return;
+    }
+    this.balance -= amount;
+    const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+    this.transactions.push({ ...transaction, id: Math.random() });
+  },
   //Метод повертає поточний баланс
   getBalance() {},
   //Метод шукає і повертає об'єкт транзакціи по id
@@ -147,3 +155,12 @@ const account = {
   //транзакціи зі всієї історії транзакцій
   getTransactionType(type) {},
 };
+
+account.deposit(345);
+account.deposit(1260);
+account.deposit(3);
+
+account.withdraw(50);
+account.withdraw(5000);
+
+console.log(account);
