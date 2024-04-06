@@ -27,22 +27,45 @@
 // якщо є - виводить повідомлення "Доступ дозволено"
 // в іншому випадку - "Користувач не знайден"
 
-const logins = ["Peter", "John", "Igor", "Sasha"];
-function checkLogins(array) {
-const login = prompt("enter you login")
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+// function checkLogins(array) {
+// const login = prompt("enter you login")
 
-// for (const element of array){
-//     if(element === login){
-//         return "Доступ дозволено";
-//     }
+// // for (const element of array){
+// //     if(element === login){
+// //         return "Доступ дозволено";
+// //     }
+// // }
+// // return "Користувач не знайден";
+
+// if(array.includes(login)){
+//     return "Доступ дозволено";
+// };
+// return "Користувач не знайден";
 // }
-// return "Користувач не знайден";  
 
-if(array.includes(login)){
-    return "Доступ дозволено";
+
+// console.log(checkLogins(logins));
+
+
+
+//Напиши скрипт, який для об'єкту user,
+//послідовно:
+//1 додасть поле mood зі значенням 'happy'
+//2 замінить hobby на 'skydiving'
+//3 замінить значення premium на false
+//4 виводить зміст об'єкта users у форматі
+//'<ключ>:<значення>' використовуя Object.keys() та for...of
+const user = {
+  name: "John",
+  age: 20,
+  hobby: "tenis",
+  premium: true,
 };
-return "Користувач не знайден";  
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user.premium = false;
+const userKeys = Object.keys(user);
+for (const key of userKeys) {
+    console.log(`${key}:${user[key]}`);
 }
-
-
-console.log(checkLogins(logins));
