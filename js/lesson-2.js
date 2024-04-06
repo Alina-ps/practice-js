@@ -145,15 +145,32 @@ const account = {
     }
     this.balance -= amount;
     const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
-    this.transactions.push({ ...transaction, id: Math.random() });
+    this.transactions.push({ ...transaction, id: 111 });
   },
   //Метод повертає поточний баланс
-  getBalance() {},
+  getBalance() {
+    return `on the balance ist ${this.balance}`
+  },
   //Метод шукає і повертає об'єкт транзакціи по id
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    for (const item of this.transactions) {
+      if (id === item.id) {
+        return item;
+      }
+    }
+    return "transaction is not found!";
+  },
   //Метод повертає кількіств коштів вказаного типу
   //транзакціи зі всієї історії транзакцій
-  getTransactionType(type) {},
+  getTransactionType(type) {
+    let total = 0;
+    for (const item of this.transactions) {
+      if (item.type === type) {
+        total += item.amount;
+      }
+    }
+    return total;
+  },
 };
 
 account.deposit(345);
@@ -164,3 +181,40 @@ account.withdraw(50);
 account.withdraw(5000);
 
 console.log(account);
+
+console.log(account.getBalance());
+console.log(account.getTransactionDetails(111));
+console.log(account.getTransactionType(Transaction.DEPOSIT));
+
+// ---------Home Work-----------
+
+
+// 6. Створіть телефонну книгу - об'єкт phonebook,
+// у якого є властивість contacts (список контактів)
+// та методи управління книгою:
+// add(data) - приймає об'єкт data, де зберігається
+// name, email, category, id, createdAt
+// (name i email - обов'язкові параметри, які треба передавати
+// при додаванні нового контакта,
+// category - може передаватись чи ні, якщо ні - має
+// приймати значення "default",
+// id та createdAt генеруються відповідними методами:
+// generateId() і getDate());
+// list() - повертає список контактів у вигляді таблиці;
+// filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.)
+// delete(name) - видаляє контакт з заданим ім'ям;
+// updateName(oldName, newName) - зиінює ім'я контакта;
+const phonebook = {
+  contacts: [],
+  add(data) {},
+  list() {},
+  filtered(category) {},
+  delete(name) {},
+  updateName(oldName, newName) {},
+  generateId() {
+    return "#" + Math.random().toString(36).substr(2, 9);
+  },
+  getDate() {
+    return Date.now();
+  },
+};
