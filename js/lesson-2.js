@@ -72,25 +72,78 @@
 //рядок з назвою фрукта.
 //Функція рахує і повертає загальну вартість фрукта
 //з таким ім'ям, ціною та кількістю з об'єкта
-const fruits = [
-  { name: "Яблуко", price: 45, quantity: 7 },
-  { name: "Апельсин", price: 60, quantity: 4 },
-  { name: "Банан", price: 125, quantity: 8 },
-  { name: "Груша", price: 350, quantity: 2 },
-  { name: "Виноград", price: 440, quantity: 3 },
-  { name: "Яблуко", price: 45, quantity: 7 },
-];
-function calcTotalPrice(fruits, fruitName) {
-  let totalPrice = 0;
-  for (const fruit of fruits) {
-    if (fruit.name === fruitName) {
-      totalPrice += fruit.price * fruit.quantity;
-    }
-  }
-  if (totalPrice === 0) {
-    return `${fruitName} not found`;
-  }
-  return totalPrice;
-}
-console.log(calcTotalPrice(fruits, "Яблуко"));
-console.log(calcTotalPrice(fruits, "Яблук"));
+// const fruits = [
+//   { name: "Яблуко", price: 45, quantity: 7 },
+//   { name: "Апельсин", price: 60, quantity: 4 },
+//   { name: "Банан", price: 125, quantity: 8 },
+//   { name: "Груша", price: 350, quantity: 2 },
+//   { name: "Виноград", price: 440, quantity: 3 },
+//   { name: "Яблуко", price: 45, quantity: 7 },
+// ];
+// function calcTotalPrice(fruits, fruitName) {
+//   let totalPrice = 0;
+//   for (const fruit of fruits) {
+//     if (fruit.name === fruitName) {
+//       totalPrice += fruit.price * fruit.quantity;
+//     }
+//   }
+//   if (totalPrice === 0) {
+//     return `${fruitName} not found`;
+//   }
+//   return totalPrice;
+// }
+// console.log(calcTotalPrice(fruits, "Яблуко"));
+// console.log(calcTotalPrice(fruits, "Яблук"));
+
+
+
+
+//5. Напишіть скрипт керування особистим кабінетом інтернет банка
+//Є об'єкт account в якому необхідно реалізувати
+//методи для работи з балансом та історією транзакцій
+//Типів транзакцій всього два.
+//Можна покласти або зняти гроші з рахунка
+const Transaction = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+//Кожна транзакція це об'єкт з властивостями id, type, amount
+const account = {
+  //поточний баланс рахунка
+  balance: 0,
+  //Історія транзакцій
+  transactions: [],
+  //Метод створює і повертає об'єкт транзакцій
+  //Приймає сумму і тип транзакцій
+  createTransaction(type, amount) {
+    return {
+      type,
+      amount,
+    };
+  },
+  
+  //Метод відповідає за додавання сумми к балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає його в історію транзакцій
+  deposit(amount) {
+    this.balance += amount;
+    const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+  transaction.id = Math.random();
+  this.transactions.push(transaction);
+ },
+  //Метод відповідає за зняття сумми з балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає його в історю транзакцій
+  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+  //що недостатньо коштів на рахунку
+  withdraw(amount) {},
+  //Метод повертає поточний баланс
+  getBalance() {},
+  //Метод шукає і повертає об'єкт транзакціи по id
+  getTransactionDetails(id) {},
+  //Метод повертає кількіств коштів вказаного типу
+  //транзакціи зі всієї історії транзакцій
+  getTransactionType(type) {},
+};
