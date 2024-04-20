@@ -130,11 +130,24 @@ const users = [
 // console.log(getUserNames(users))
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
-const getUserNames = (users) => users.map((user) => user.name);
-console.log(getUserNames(users));
+// const getUserNames = (users) => users.map((user) => user.name);
+// console.log(getUserNames(users));
 
-// зробити функцію універсальною, щоб вона повертала
-// масив будь-якої заданої властивості
+// // зробити функцію універсальною, щоб вона повертала
+// // масив будь-якої заданої властивості
 
-const getUserValues = (users, prop) => users.map((user) => user[prop]);
-console.log(getUserValues(users, "email"));
+// const getUserValues = (users, prop) => users.map((user) => user[prop]);
+// console.log(getUserValues(users, "email"));
+
+// Task 2
+// Отримати масив користувачів віком від min до max
+// console.log (getUsersWithAge (users, 20, 30));
+// [об'єкт Ross Vazquez, об'єкт Elma Head, об'єкт Carey Barr]
+// console.log (getUsersWithAge (users, 30, 40));
+// [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Blackburn Dotson, об'єкт Sheree Anthony]
+
+function getUsersWithAge(users, min, max) {
+  return users.filter((user) => user.age >= min && user.age <= max);
+}
+console.log(getUsersWithAge(users, 20, 30));
+console.log(getUsersWithAge(users, 30, 40));
