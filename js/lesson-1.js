@@ -188,9 +188,9 @@
 // Якщо це так - виведіть 'Так', в іншому випадку - 'Ні'.
 
 
-const message = "bcde";
-if (message.startsWith("a")) {
-  alert("Так");
-} else {
-  alert("No");
-}
+// const message = "bcde";
+// if (message.startsWith("a")) {
+//   alert("Так");
+// } else {
+//   alert("No");
+// }
