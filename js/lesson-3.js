@@ -187,16 +187,61 @@ const users = [
 
 
 
-const concerts = {
-  Київ: new Date("2024-08-01"),
-  Умань: new Date("2024-07-02"),
-  Вінниця: new Date("2023-04-21"),
-  Одеса: new Date("2024-07-15"),
-  Хмельницький: new Date("2023-04-18"),
-  Харків: new Date("2023-07-10"),
-};
+// const concerts = {
+//   Київ: new Date("2024-08-01"),
+//   Умань: new Date("2024-07-02"),
+//   Вінниця: new Date("2023-04-21"),
+//   Одеса: new Date("2024-07-15"),
+//   Хмельницький: new Date("2023-04-18"),
+//   Харків: new Date("2023-07-10"),
+// };
 
-const cities = (concerts) => {
-  return Object.keys(concerts).filter(city => concerts[city] > new Date()).toSorted((a, b) => concerts[a]- concerts[b])
+// const cities = (concerts) => {
+//   return Object.keys(concerts).filter(city => concerts[city] > new Date()).toSorted((a, b) => concerts[a]- concerts[b])
+// }
+// console.log(cities(concerts));
+
+//3. Напиши класс Notes який управляє коллекцієй нотаток у
+//властивості items.
+//Нотатка це  об'єкт з властивостями text, priority
+//Додай класу статичну властивість Priority,
+//в якій буде зберігатись об'єкт з пріорітетами ("hight", "middle", "low").
+//Додай методи addNote(note), removeNote(noteText)
+//updatePriority(noteText, newPriority)
+
+class Notes {
+  static Priority = {
+    HIGHT: "hight",
+    MIDDLE: "middle",
+    LOW: "low"
+  }
+
+constructor () {
+  this.items = [];
 }
-console.log(cities(concerts));
+
+addNote(note) {
+  this.items.push(note);
+}
+
+removeNote(noteText) {
+  this.items = this.items.filter(note => note.text !== noteText)
+}
+
+updatePriority(noteText, newPriority){
+  const note = this.items.find(note => note.text === noteText)
+  if (note) {
+    note.priority = newPriority;
+  }
+}
+
+}
+
+const notes = new Notes();
+
+
+notes.addNote({text: "katastrofa", priority: Notes.Priority.LOW});
+notes.addNote({text: "unikalniy", priority: Notes.Priority.MIDDLE});
+notes.removeNote("katastrofa");
+notes.updatePriority("unikalniy", Notes.Priority.HIGHT);
+console.log(notes);
