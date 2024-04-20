@@ -171,8 +171,32 @@ const users = [
 // console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
-const getSortedUniqueSkills = (users) => {
-  return users.flatMap(user => user.skills).filter((skill, index, arr) =>  arr.indexOf(skill) === index).toSorted((a, b) => a.localeCompare(b));
-}
+// const getSortedUniqueSkills = (users) => {
+//   return users.flatMap(user => user.skills).filter((skill, index, arr) =>  arr.indexOf(skill) === index).toSorted((a, b) => a.localeCompare(b));
+// }
 
-console.log(getSortedUniqueSkills(users));
+// console.log(getSortedUniqueSkills(users));
+
+
+// Task 9
+/// Даний словник із міст та дат виступів рок-групи
+/// Необхідно перетворити словник (key-value) на масив із назв міст
+/// Виведення міст має бути у хронологічному порядку
+/// Міста у яких концерт вже пройшов потрібно виключити
+/// Результат ["Київ", "Умань", "Одеса"]
+
+
+
+const concerts = {
+  Київ: new Date("2024-08-01"),
+  Умань: new Date("2024-07-02"),
+  Вінниця: new Date("2023-04-21"),
+  Одеса: new Date("2024-07-15"),
+  Хмельницький: new Date("2023-04-18"),
+  Харків: new Date("2023-07-10"),
+};
+
+const cities = (concerts) => {
+  return Object.keys(concerts).filter(city => concerts[city] > new Date()).toSorted((a, b) => concerts[a]- concerts[b])
+}
+console.log(cities(concerts));
