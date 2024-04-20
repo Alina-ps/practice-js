@@ -95,9 +95,6 @@
 // console.log(calcTotalPrice(fruits, "Яблуко"));
 // console.log(calcTotalPrice(fruits, "Яблук"));
 
-
-
-
 //5. Напишіть скрипт керування особистим кабінетом інтернет банка
 //Є об'єкт account в якому необхідно реалізувати
 //методи для работи з балансом та історією транзакцій
@@ -121,7 +118,7 @@ const account = {
       amount,
     };
   },
-  
+
   //Метод відповідає за додавання сумми к балансу.
   //Приймає сумму транзакціи.
   //Визиває createTransaction для створення об'єкта транзакціи
@@ -129,9 +126,9 @@ const account = {
   deposit(amount) {
     this.balance += amount;
     const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
-  transaction.id = Math.random();
-  this.transactions.push(transaction);
- },
+    transaction.id = Math.random();
+    this.transactions.push(transaction);
+  },
   //Метод відповідає за зняття сумми з балансу.
   //Приймає сумму транзакціи.
   //Визиває createTransaction для створення об'єкта транзакціи
@@ -149,7 +146,7 @@ const account = {
   },
   //Метод повертає поточний баланс
   getBalance() {
-    return `on the balance ist ${this.balance}`
+    return `on the balance ist ${this.balance}`;
   },
   //Метод шукає і повертає об'єкт транзакціи по id
   getTransactionDetails(id) {
@@ -188,7 +185,6 @@ console.log(account.getTransactionType(Transaction.DEPOSIT));
 
 // ---------Home Work-----------
 
-
 // 6. Створіть телефонну книгу - об'єкт phonebook,
 // у якого є властивість contacts (список контактів)
 // та методи управління книгою:
@@ -204,17 +200,17 @@ console.log(account.getTransactionType(Transaction.DEPOSIT));
 // filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.)
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - зиінює ім'я контакта;
-const phonebook = {
-  contacts: [],
-  add(data) {},
-  list() {},
-  filtered(category) {},
-  delete(name) {},
-  updateName(oldName, newName) {},
-  generateId() {
-    return "#" + Math.random().toString(36).substr(2, 9);
-  },
-  getDate() {
-    return Date.now();
-  },
-};
+// const phonebook = {
+//   contacts: [],
+//   add(data) {},
+//   list() {},
+//   filtered(category) {},
+//   delete(name) {},
+//   updateName(oldName, newName) {},
+//   generateId() {
+//     return "#" + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
