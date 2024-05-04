@@ -113,4 +113,22 @@
 // }
 
 
+/*
+При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
+За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
+інформацією про те, яка кнопка була натиснута скільки разів.
+*/
 
+const statList = document.querySelector(".statList");
+let total = 0;
+
+statList.addEventListener("click", foo);
+
+function foo(event) {
+    if (event.target.nodeName !== "BUTTON") return;
+
+    const value = Number(event.target.dataset.number);
+    total+=value;
+    console.log(total);
+
+}
