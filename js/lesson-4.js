@@ -74,21 +74,43 @@
 // Додати кнопку "Зменшити", яка робить квадрат менше на 10 пікселів
 // Додати кнопку "Збільшити", яка робить його більше на 10 пікселів.
 
-let size = 50;
-const markUp = `<button class="decr">Зменшити</button><button class="incr">Збільшити</button><div class="box" style="background-color: red; width: ${size}px; height: ${size}px"></div>`;
-document.body.insertAdjacentHTML("afterbegin", markUp);
-const buttonDecr = document.querySelector(".decr");
-const buttonIncr = document.querySelector(".incr");
-const boxElement = document.querySelector(".box");
-buttonDecr.addEventListener("click", funcDecr);
-buttonIncr.addEventListener("click", funcIncr);
-function funcDecr() {
-  size -= 10;
-  boxElement.style.width = `${size}px`;
-  boxElement.style.height = `${size}px`;
-}
-function funcIncr() {
-  size += 10;
-  boxElement.style.width = `${size}px`;
-  boxElement.style.height = `${size}px`;
-}
+// let size = 50;
+// const markUp = `<button class="decr">Зменшити</button><button class="incr">Збільшити</button><div class="box" style="background-color: red; width: ${size}px; height: ${size}px"></div>`;
+// document.body.insertAdjacentHTML("afterbegin", markUp);
+// const buttonDecr = document.querySelector(".decr");
+// const buttonIncr = document.querySelector(".incr");
+// const boxElement = document.querySelector(".box");
+// buttonDecr.addEventListener("click", funcDecr);
+// buttonIncr.addEventListener("click", funcIncr);
+// function funcDecr() {
+//   size -= 10;
+//   boxElement.style.width = `${size}px`;
+//   boxElement.style.height = `${size}px`;
+// }
+// function funcIncr() {
+//   size += 10;
+//   boxElement.style.width = `${size}px`;
+//   boxElement.style.height = `${size}px`;
+// }
+
+
+//  При натисканні на будь-який рядок у табличці відобразіть
+//  повідомлення з назвою продукту та його ціною.
+//  "Ви вибрали <product> за <price>".
+
+// const productTable = document.querySelector("#productTable");
+// const productDetails = document.querySelector("#productDetails");
+
+// productTable.addEventListener("click", showDetails);
+
+// function showDetails(event) {
+//   if (event.target.nodeName !== "TD") return;
+//   const parent = event.target.parentNode;
+//   const product = parent.firstElementChild.textContent;
+//   const price = parent.lastElementChild.textContent;
+
+//   productDetails.textContent = `Ви вибрали ${product} за ${price}`
+// }
+
+
+
